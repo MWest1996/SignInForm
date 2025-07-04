@@ -11,6 +11,9 @@ body{
     background-image: url(images/bg-intro-mobile.png);
     background-color: var(--color-red);
     font-family: var(--font-body);
+    display: flex;
+    margin: 0;
+    padding: 0;
 }
 
 @media only screen and (min-width: 400px)
@@ -20,11 +23,28 @@ body{
     }
 } 
 
-.attributions{
+#mainContainer{
+    background-color: white;
+    max-width: 375px;
+}
+
+button{
+    background-color: var(--color-green);
+    font-family: var(--font-body);
+    margin-left: auto;
+    margin-right: auto;
+    width: 275px;
+    height: 50px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+}
+
+#attributions{
     font-size: 11px; text-align: center;
 }
 
-.attribution a {
+#attribution a {
     color: hsl(228, 45%, 44%);
 }
 /* Formatting stuff so i don't have to jump back and forth
