@@ -29,11 +29,16 @@
 
         <div id="mainContainer">
         <form class="inputFields">
-            <input type="text" id="fname" name="fname" placeholder="First Name">
-            <input type="text" id="lname" name="lname" placeholder="Last Name">
-            <input type="text" id="email" name="email" placeholder="Email Address">
-            <input type="text" id="password" name="password" placeholder="Password">
-            <button type="submit" id="submit">claim your free trial</button>
+            <input type="text" class="fname" name="fname" placeholder="First Name" required>
+            <img class="error-fName-icon" src="images/icon-error.svg" alt="error icon">
+            <div class="error-fName"></div>
+            <input type="text" class="lname" name="lname" placeholder="Last Name" required>
+            <div class="error-lName"></div>
+            <input type="text" class="email" name="email" placeholder="Email Address" required>
+            <div class="error-email"></div>
+            <input type="text" class="password" name="password" placeholder="Password" required>
+            <div class="error-password"></div>
+            <button type="submit" class="submit">claim your free trial</button>
             </button>
         </form>
         <div class="legal">
@@ -48,4 +53,5 @@
         Coded by <a href="#">Your Name Here</a>.
     </div> -->
 </body>
+<script src="script.js"></script>
 </html>
