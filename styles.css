@@ -87,7 +87,16 @@ input[type=text]{
     font-weight: 500;
 }
 
+#error-email-icon img,
+#error-fName-icon img,
+#error-lName-icon img,
+#error-password-icon img{
+    opacity: 0;
+}
 
+.formGroup > img{
+    position: absolute;
+}
 
 ::placeholder{
     font-family: var(--font-body);
