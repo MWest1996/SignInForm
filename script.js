@@ -37,25 +37,25 @@ let validateLname = () => {
     let value = lname.value.trim();
     if (value.length < 1){
         lnameErr.textContent = "Last Name cannot be empty";
-        lnameErr.style.display = "block"
-        lnameErrIcon.style.display = "block"
+        lnameErr.style.display = "block";
+        lnameErrIcon.style.display = "block";
         lname.classList.add('invalid');
         lname.classList.remove('valid')
-        return false
+        return false;
     } else {
         lnameErr.textContent = "";
         lnameErr.style.display = "none";
         lnameErrIcon.style.display = "none";
         lname.classList.remove("invalid");
         lname.classList.add('valid');
-        return true
+        return true;
     }
 }
 
 let validateEmail = () => {
     let value = email.value.trim();
-    if (value.length < 1){
-        emailErr.textContent = "Looks like this is not an email";
+    if (value.length < 1 || !value.includes("@") || !value.includes(".")){
+        emailErr.textContent = "Please enter a valid email address";
         emailErr.style.display = "block";
         emailErrIcon.style.display = "block";
         email.classList.add("invalid");
@@ -106,5 +106,6 @@ form.addEventListener ('submit', function(e) {
 
     if (fnameValid && lnameValid && emailValid && pwValid){ 
         form.reset();
+        alert("Thank you for completing the form. Please see your email for more details");
     }
 })
