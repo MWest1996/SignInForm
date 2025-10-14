@@ -18,13 +18,17 @@ let validateFname = () => {
     let value = fname.value.trim();
     if (value.length < 1){
         fnameErr.textContent = "First Name cannot be empty";
-        fnameErr.classList.remove("hide");
+        fnameErr.style.display = "block";
+        fnameErrIcon.style.display = "block";
         fname.classList.add('invalid');
+        fname.classList.remove('valid');
         return false
     } else {
         fnameErr.textContent = "";
         fnameErr.style.display = "none";
-        fname.classList.remove('invalid')
+        fnameErrIcon.style.display = "none";
+        fname.classList.remove('invalid');
+        fname.classList.add('valid');
         return true
     }
 }
@@ -33,43 +37,74 @@ let validateLname = () => {
     let value = lname.value.trim();
     if (value.length < 1){
         lnameErr.textContent = "Last Name cannot be empty";
-        lnameErr.classList.remove(".hide");
-        lnameErrIcon.classList.remove(".hide")
-        lname.classList.add('.invalid');
+        lnameErr.style.display = "block"
+        lnameErrIcon.style.display = "block"
+        lname.classList.add('invalid');
+        lname.classList.remove('valid')
         return false
     } else {
         lnameErr.textContent = "";
         lnameErr.style.display = "none";
-        lnameErrIcon.classList.remove("hide");
+        lnameErrIcon.style.display = "none";
         lname.classList.remove("invalid");
+        lname.classList.add('valid');
         return true
     }
 }
 
-// let validateEmail
-//     let value = email.value.trim();
-//     if (value.length < 1){
-//         lnameErr.textContent = "Please enter a valid email address";
-//         lnameErr.style.display = "block";
-//         lnameErr.style.display = "block";
-//         lname.classList.add('.invalid');
-//         return false
-//     } else {
-//         emailErr.textContent = "";
-//         emailErr.style.display = "none";
-//         emailErrIcon.style.display = "none;"
-//         email.classList.remove("invalid");
-//         return true
-//     }
+let validateEmail = () => {
+    let value = email.value.trim();
+    if (value.length < 1){
+        emailErr.textContent = "Looks like this is not an email";
+        emailErr.style.display = "block";
+        emailErrIcon.style.display = "block";
+        email.classList.add("invalid");
+        email.classList.remove('valid');
+        return false;
+    } else {
+        emailErr.textContent = "";
+        emailErr.style.display = "none";
+        emailErrIcon.style.display = "none";
+        email.classList.remove("invalid");
+        email.classList.add('valid');
+        return true;
+    }
+}
+
+let validatePW = () => {
+    let value = password.value.trim();
+    if (value.length < 1){
+        pwErr.textContent = "Password cannot be empty";
+        pwErr.style.display = "block";
+        pwErrIcon.style.display = "block";
+        password.classList.add('invalid');
+        password.classList.remove('valid');
+        return false; 
+    } if (value.length >= 1 && value.length < 8) {
+        pwErr.textContent = "Password must be at least 8 characters long";
+        pwErr.style.display = "block";
+        pwErrIcon.style.display = "block";
+        password.classList.add('invalid');
+        password.classList.remove('valid');
+        return false;
+    } else
+        pwErr.textContent = "";
+        pwErr.style.display = "none";
+        pwErrIcon.style.display = "none";
+        password.classList.remove('invalid');
+        password.classList.add('valid');
+        return true;
+}
 
 form.addEventListener ('submit', function(e) {
     e.preventDefault();
 
     let fnameValid = validateFname();
+    let lnameValid = validateLname();
+    let emailValid = validateEmail();
+    let pwValid = validatePW();
 
-    if (fnameValid){ 
-        console.log("success");
-    } else {
-        console.log("fail");
+    if (fnameValid && lnameValid && emailValid && pwValid){ 
+        form.reset();
     }
 })
