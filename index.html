@@ -13,56 +13,56 @@
 </head>
 <body>
 
-    <div class="leftWrapper">
-        <h1>Learn to code by watching others</h1>
-        <p>
-            See how experienced developers solve problems in real-time. Watching scripted tutorials is great, but understanding how developers think is invaluable.
-        </p>
-
-
-    </div>
-
-    <div class="rightWrapper">
-        <div id="trial">
-            <b>Try it free for 7 days</b> then $20/mo. thereafter
+    <div class="main">
+        <div class="leftWrapper">
+            <h1>Learn to code by watching others</h1>
+            <p>
+                See how experienced developers solve problems in real-time. Watching scripted tutorials is great, but understanding how developers think is invaluable.
+            </p>
         </div>
 
-        <div id="mainContainer">
-        <form class="inputFields">
-            <div class="formGroup">
-                <input type="text" class="fname" name="fname" placeholder="First Name" required>
-                <img class="error-fName-icon" src="images/icon-error.svg" alt="error icon">
+        <div class="rightWrapper">
+            <div class="trial">
+                <b>Try it free for 7 days</b> then $20/mo. thereafter
             </div>
 
-            <div class="error-fName"></div>
-            
-            <div class="formGroup">
-                <input type="text" class="lname" name="lname" placeholder="Last Name" required>
-                <img class="error-lName-icon" src="images/icon-error.svg" alt="error icon">
+            <div class="mainContainer">
+                <form id="form">
+                    <div class="formGroup">
+                        <input type="text" id="fname" name="fname" placeholder="First Name">
+                        <img id="fnameErr-Icon" class="hide errIcon" src="images/icon-error.svg" alt="">
+                    </div>
+
+                    <div id="fnameErr" class="hide error"></div>
+                    
+                    <div class="formGroup">
+                        <input type="text" id="lname" name="lname" placeholder="Last Name">
+                        <img id="lnameErr-Icon"class="hide errIcon" src="images/icon-error.svg" alt="">
+                    </div>
+
+                    <div id="lnameErr" class="hide error">Last Name cannot be empty</div>
+
+                    <div class="formGroup">
+                        <input type="email" id="email" name="email" placeholder="Email Address">
+                        <img class="hide errIcon" id="emailErr-Icon" src="images/icon-error.svg" alt="">
+                    </div>
+
+                    <div id="emailErr" class="hide error">Looks like this is not an email</div>
+
+                    <div class="formGroup">
+                        <input type="text" id="password" name="password" placeholder="Password">
+                        <img class="hide errIcon" id="pwErr-Icon" src="images/icon-error.svg" alt="">
+                    </div>
+
+                    <div id="pwErr" class="hide error">Password cannot be empty</div>
+
+                    <input class="submit" type="button" id="submit" value="claim your free trial">
+                </form>
+            <div class="legal">
+                <p>
+                    By clicking the button, you are agreeing to our <a href="about.html">Terms and Services.</a>
+                </p>
             </div>
-
-            <div class="error-lName"></div>
-
-            <div class="formGroup">
-                <input type="text" class="email" name="email" placeholder="Email Address" required>
-                <img class="error-email-icon" src="images/icon-error.svg" alt="error icon">
-            </div>
-
-            <div class="error-email"></div>
-
-            <div class="formGroup">
-                <input type="text" class="password" name="password" placeholder="Password" required>
-                <img class="error-password-icon" src="images/icon-error.svg" alt="error icon">
-            </div>
-
-            <div class="error-password"></div>
-
-            <button type="submit" class="submit">claim your free trial</button>
-        </form>
-        <div class="legal">
-            <p>
-                By clicking the button, you are agreeing to our <a href="about.html">Terms and Services</a>
-            </p>
         </div>
     </div>
 
@@ -71,5 +71,5 @@
         Coded by <a href="#">Your Name Here</a>.
     </div> -->
 </body>
-<script src="script.js"></script>
+<script type="text/javascript" src="script.js" defer></script>
 </html>
